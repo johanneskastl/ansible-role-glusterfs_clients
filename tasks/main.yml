@@ -35,3 +35,4 @@
     mode: '0644'
   notify:
     - 'Trigger systemctl daemon-reload'
+    - 'Start and enable the glusterfs mount'

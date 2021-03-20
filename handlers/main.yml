@@ -4,3 +4,9 @@
 - name: 'Trigger systemctl daemon-reload'
   ansible.builtin.systemd:
     daemon_reload: 'yes'
+
+- name: 'Start and enable the glusterfs mount'
+  service:
+    name: "{{ mount_unit_name.stdout }}"
+    state: 'started'
+    enabled: 'true'
