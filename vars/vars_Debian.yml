@@ -1,0 +1,6 @@
+---
+# glusterfs_clients/vars/vars_Debian.yml
+
+# packages to be installed
+glusterfs_client_packages:
+  - glusterfs-client
