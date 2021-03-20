@@ -1,0 +1,13 @@
+[Unit]
+Description = Glusterfs volume {{ glusterfs_volume_name }}
+After=network.target
+Requires=network-online.target
+
+[Mount]
+What={{ glusterfs_server_name }}:/{{ glusterfs_volume_name }}
+Where={{ path_to_mount }}
+Type=glusterfs
+Options=defaults,acl
+
+[Install]
+WantedBy=multi-user.target
