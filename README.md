@@ -8,12 +8,14 @@ Install packages and prepare a systemd unit for a glusterfs mount
 Requirements
 ------------
 
-None.
+You obviously need a glusterfs server on another machine, who's volume you want to mount...
 
 Role Variables
 --------------
 
-None.
+- `glusterfs_server_name`: hostname of one of the glusterfs servers, e.g. `my-glusterfs-server-01`
+- `glusterfs_volume_name`: name of the glusterfs volume (without leading slash), e.g.`gv1`
+- `path_to_mount`: path where the glusterfs volume should be mounted, e.g. `/opt/glusterfs`
 
 Dependencies
 ------------
