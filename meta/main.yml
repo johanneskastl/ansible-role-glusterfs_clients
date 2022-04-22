@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'glusterfs_clients'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Install packages and prepare a systemd unit for a glusterfs mount '
   company: 'B1 Systems GmbH'
