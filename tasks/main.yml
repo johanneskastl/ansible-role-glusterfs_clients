@@ -23,7 +23,7 @@
 - name: 'Get the proper name for the unit from systemd-escape'
   command: systemd-escape -p --suffix="mount" "{{ path_to_mount }}"
   changed_when: false
-  check_mode: no
+  check_mode: false
   register: mount_unit_name
 
 - name: 'Create systemd mount unit'
