@@ -2,18 +2,18 @@
 # glusterfs_clients/tasks/main.yml
 
 - name: "Load variables"
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "vars_{{ ansible_distribution }}.yml"
     - "vars_{{ ansible_os_family }}.yml"
 
 - name: 'Install glusterfs client packages'
-  package:
+  ansible.builtin.package:
     name: "{{ glusterfs_client_packages }}"
     state: 'present'
 
 - name: 'Create directory for the glusterfs mount'
-  file:
+  ansible.builtin.file:
     path: "{{ path_to_mount }}"
     state: 'directory'
     owner: 'root'
@@ -21,13 +21,13 @@
     mode: '0755'
 
 - name: 'Get the proper name for the unit from systemd-escape'
-  command: systemd-escape -p --suffix="mount" "{{ path_to_mount }}"
+  ansible.builtin.command: systemd-escape -p --suffix="mount" "{{ path_to_mount }}"
   changed_when: false
   check_mode: false
   register: mount_unit_name
 
 - name: 'Create systemd mount unit'
-  template:
+  ansible.builtin.template:
     src: 'glusterfs.mount.j2'
     dest: "/etc/systemd/system/{{ mount_unit_name.stdout }}"
     owner: 'root'
