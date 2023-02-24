@@ -3,7 +3,7 @@
 glusterfs_clients
 =========
 
-Install packages and prepare a systemd unit for a glusterfs mount 
+Install packages and prepare a systemd unit for a glusterfs mount
 
 Requirements
 ------------
@@ -27,7 +27,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.glusterfs_clients' }
+         - role: 'johanneskastl.glusterfs_clients'
 
 License
 -------
