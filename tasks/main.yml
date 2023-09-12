@@ -37,6 +37,9 @@
     - 'Trigger systemctl daemon-reload'
     - 'Restart the glusterfs mount'
 
+- name: 'Flush handlers'
+  ansible.builtin.meta: flush_handlers
+
 - name: 'Start and enable the glusterfs mount'
   ansible.builtin.service:
     name: "{{ mount_unit_name.stdout }}"
