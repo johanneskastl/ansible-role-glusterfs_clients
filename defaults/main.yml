@@ -1,0 +1,4 @@
+---
+# glusterfs_clients/defaults/main.yml
+
+mount_options: 'defaults,acl'
