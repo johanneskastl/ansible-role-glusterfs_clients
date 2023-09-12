@@ -1,0 +1,6 @@
+---
+# glusterfs_clients/vars/vars_Suse.yml
+
+# packages to be installed
+glusterfs_client_packages:
+  - 'glusterfs'
