@@ -35,4 +35,9 @@
     mode: '0644'
   notify:
     - 'Trigger systemctl daemon-reload'
-    - 'Start and enable the glusterfs mount'
+
+- name: 'Start and enable the glusterfs mount'
+  ansible.builtin.service:
+    name: "{{ mount_unit_name.stdout }}"
+    state: 'started'
+    enabled: 'true'
