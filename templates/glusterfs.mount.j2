@@ -8,9 +8,9 @@ What={{ glusterfs_server_name }}:/{{ glusterfs_volume_name }}
 Where={{ path_to_mount }}
 Type=glusterfs
 {% if force_ipv4_as_ipv6_not_available is defined and force_ipv4_as_ipv6_not_available | bool %}
-Options=defaults,acl,xlator-option=transport.address-family=inet
+Options={{ mount_options }},xlator-option=transport.address-family=inet
 {% else %}
-Options=defaults,acl
+Options={{ mount_options }}
 {% endif %}
 
 [Install]
