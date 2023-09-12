@@ -10,3 +10,8 @@
     name: "{{ mount_unit_name.stdout }}"
     state: 'started'
     enabled: 'true'
+
+- name: 'Restart the glusterfs mount'
+  ansible.builtin.service:
+    name: "{{ mount_unit_name.stdout }}"
+    state: 'restarted'
